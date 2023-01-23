@@ -4,7 +4,7 @@ import os
 import json
 import shutil
 
-cache_dir = ".instagramy_cache"
+cache_dir = ".another_one"
 
 
 class Cache:

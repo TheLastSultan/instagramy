@@ -59,9 +59,6 @@ class InstagramUser(UserParser):
                 self.user_data = data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
         else:
             data = self.get_json()
-            cache.make_cache(
-                username, data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
-            )
             try:
                 self.user_data = data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
             except KeyError:

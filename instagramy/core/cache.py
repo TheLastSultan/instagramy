@@ -13,32 +13,25 @@ class Cache:
 
     def __init__(self, key: str):
         self.key = key
-        if not os.path.isdir(cache_dir):
-            os.mkdir(cache_dir)
-        with open(cache_dir + "/CACHEDIR.TAG", "w") as file:
-            file.write(
-                "# This file is a cache directory tag created by instagramy." + "\n"
-            )
+      
 
     def is_exists(self, name: str) -> bool:
-        return os.path.isfile(cache_dir + f"/{name}_{self.key}" + ".json")
+        return False
 
     def make_cache(self, name: str, data: dict):
-        with open(cache_dir + f"/{name}_{self.key}" + ".json", "w") as file:
-            json.dump(data, file)
-
+        pass
+    
     def read_cache(self, name: str) -> dict:
-        with open(cache_dir + f"/{name}_{self.key}" + ".json", "r") as file:
-            return json.load(file)
+        pass
 
 
 def list_caches() -> None:
     """ List of all Cache files created by instagramy in current dir """
 
-    return os.listdir(cache_dir)
+    return None
 
 
 def clear_caches() -> None:
     """ Clear all Caches created by instagramy in current dir """
 
-    return shutil.rmtree(cache_dir, ignore_errors=True)
+    return None
